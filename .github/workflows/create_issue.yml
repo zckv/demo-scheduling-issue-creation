@@ -13,6 +13,13 @@ jobs:
     steps:
       - name: Create team sync issue
         run: |
+          echo "pwd is $(pwd)"
+          echo "ls is"
+          ls -al
+          echo "ls .. is"
+          ls -al ..
+          echo "ls ../.. is"
+          ls -al ../..
           if [[ $CLOSE_PREVIOUS == true ]]; then
             previous_issue_number=$(gh issue list \
               --json number \
