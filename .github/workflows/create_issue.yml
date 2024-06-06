@@ -15,7 +15,6 @@ jobs:
         run: |
           if [[ $CLOSE_PREVIOUS == true ]]; then
             previous_issue_number=$(gh issue list \
-              --label "$LABELS" \
               --json number \
               --jq '.[0].number')
             if [[ -n $previous_issue_number ]]; then
@@ -36,7 +35,6 @@ jobs:
           GH_REPO: ${{ github.repository }}
           TITLE: Team sync
           ASSIGNEES: zckv
-          LABELS: weekly sync,docs-team
           BODY: |
             ### Agenda
 
